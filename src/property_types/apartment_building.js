@@ -7,7 +7,8 @@ function ApartmentBuilding(name, address) {
   this.address = address;
 
   this.units = [];
+  this.maxUnits = 100
 }
+inherits(ApartmentBuilding, Property);
 
-inherits(ApartmentBuilding, Property)
 module.exports = ApartmentBuilding;
