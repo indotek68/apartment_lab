@@ -31,7 +31,9 @@ Property.prototype.addTenant = function(unit, tenant) {
 
 Property.prototype.removeTenant = function(unit, tenant) {
   // remove tenant
-  unit.tenant = {};
+  if(unit.tenant === tenant){
+    unit.tenant = null;
+  }
 };
 
 Property.prototype.availableUnits = function(){
