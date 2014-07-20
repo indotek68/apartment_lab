@@ -3,7 +3,9 @@ function Property(address) {
   this.units = [];
   this.manager = {};
   this.managerSet = false;
-  this.maxUnit = 0;
+  this.available = 0;
+  this.rented = 0;
+
 }
 
 Property.prototype.setManager = function(person) {
@@ -22,8 +24,8 @@ Property.prototype.getManager = function(){
 Property.prototype.addTenant = function(unit, tenant) {
   // add tenant but check to make sure there
   // is a manager first and a tenant has 2 references
-  if(this.manager === true && tenant.references.length >= 2){
-    unit.tenant = tenant;
+  if(this.managerSet === true && tenant.references.length >= 2){
+    return unit.tenant = tenant;
   }
 };
 
@@ -34,15 +36,27 @@ Property.prototype.removeTenant = function(unit, tenant) {
 
 Property.prototype.availableUnits = function(){
   // return num of units available
-  num = this.maxUnits - this.units.length
-  return num;
+  if(this.units.length === undefined){
+    alert("You have not added any units")
+  }
+  else{
+    for (var i = 0; i < this.units.length; i++) {
+      if(unit.tenant === null){
+        this.available += 1;
+      }
+    };
+    return this.available;
+  }
 }
 
 Property.prototype.rentedUnits = function(){
   // return rented units
-  rentedUnit = this.units.length
-  return rentedUnit
+  for (var i = 0; i < this.units.length; i++) {
+      if(unit.tenant !== null){
+        this.rented += 1;
+      }
+    return this.rented;
+  };
 }
-
 
 module.exports = Property;

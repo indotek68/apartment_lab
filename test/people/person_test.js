@@ -25,13 +25,22 @@ describe("Person", function(){
 //   })
 // })
 
-// describe("Manager", function(){
-//   var apt = new Manager("Angga", "123-456-7890");
+describe("Manager", function(){
+  var manager = new Manager("Angga", "123-456-7890");
 
-// 	describe("#addProperty", function(){
-//     it("push a property to properties array", function(){
-//       apt.addProperty("fox plaza");
-//       expect(apt.properties).to.eql(["fox plaza"]);
-//     })
-// 	})
-// })
+  describe("#manager", function(){
+  	it("should set manager name to Angga", function(){
+  		manager.name;
+  	})
+  	expect(manager.name).to.eql("Angga");
+  	//expect(manager.sal()).to.eql("Hello Angga");
+  })
+
+
+	// describe("#addProperty", function(){
+ //    it("push a property to properties array", function(){
+ //      apt.addProperty("fox plaza");
+ //      expect(apt.properties).to.eql(["fox plaza"]);
+ //    })
+	// })
+})

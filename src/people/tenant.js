@@ -3,8 +3,7 @@ var inherits = require("../inherits.js")
 
 function Tenant(name, contact) {
   // set this.name, and contact
-  this.name = name;
-  this.contact = contact;
+  Person.call(this, name, contact);
 
   this.references = [];
 };
