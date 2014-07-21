@@ -7,12 +7,12 @@ function Unit (number, building, sqft, rent) {
   this.rent = rent;
 }
 
-Unit.prototype.available = function(){
-  // check for tenant
-  if(this.tenant != null){
-  	return "Unit is occupied"
-  }
-}
+// Unit.prototype.available = function(){
+//   // check for tenant
+//   if(this.tenant != null){
+//   	return "Unit is occupied"
+//   }
+// }
 
 
 module.exports = Unit;

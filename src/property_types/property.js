@@ -29,6 +29,11 @@ Property.prototype.addTenant = function(unit, tenant) {
   }
 };
 
+Property.prototype.addUnit = function(unit) {
+  // add units
+  this.units.push(unit);
+};
+
 Property.prototype.removeTenant = function(unit, tenant) {
   // remove tenant
   if(unit.tenant === tenant){
@@ -43,9 +48,10 @@ Property.prototype.availableUnits = function(){
   }
   else{
     for (var i = 0; i < this.units.length; i++) {
-      if(unit.tenant === null){
+      if(this.units[i].tenant === null){
         this.available += 1;
       }
+      console.log(this.units[i])
     };
     return this.available;
   }
@@ -54,7 +60,7 @@ Property.prototype.availableUnits = function(){
 Property.prototype.rentedUnits = function(){
   // return rented units
   for (var i = 0; i < this.units.length; i++) {
-      if(unit.tenant !== null){
+      if(this.units[i].tenant !== null){
         this.rented += 1;
       }
     return this.rented;
